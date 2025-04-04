@@ -125,7 +125,12 @@ body {
       }
 
       #mobileMenu {
+        width: 100vw !important;
+        margin-right: 0 !important;
+        right: 0 !important;
+        padding-right: 0 !important;
         transform: translateX(100%);
+        overflow-x: hidden;
       }
 
       #mobileMenu.translate-x-0 {
@@ -267,4 +272,18 @@ body {
       #mobileMenu {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+      }
+
+      @media (max-width: 767px) {
+        .container-custom {
+          padding-right: 0;
+          padding-left: 0;
+          width: 100%;
+          max-width: 100%;
+        }
+        
+        #mobileMenu .container-custom {
+          padding-right: 1rem;
+          padding-left: 1rem;
+        }
       }

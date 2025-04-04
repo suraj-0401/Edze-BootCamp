@@ -87,11 +87,11 @@
       <!-- Mobile Menu -->
       <div 
         id="mobileMenu" 
-        class="md:hidden fixed inset-0 bg-white/95 backdrop-blur-xl z-40 hidden transform transition-all duration-500 ease-in-out"
+        class="md:hidden fixed inset-0 bg-white/95 backdrop-blur-xl z-40 hidden transform transition-all duration-500 ease-in-out w-screen"
         style="height: 100vh;"
       >
         <!-- Header Section -->
-        <div class="h-20 border-b border-gray-200 flex items-center justify-between px-6">
+        <div class="h-20 border-b border-gray-200 flex items-center justify-between px-4">
           <div class="flex-1">
             <button 
               id="closeMobileMenu"
@@ -118,8 +118,8 @@
         </div>
 
         <!-- Navigation Menu -->
-        <nav class="h-[calc(100vh-5rem)] overflow-y-auto py-8">
-          <div class="container-custom flex flex-col items-center gap-6">
+        <nav class="h-[calc(100vh-5rem)] overflow-y-auto py-8 w-full">
+          <div class="container-custom flex flex-col items-center gap-6 px-4">
             <!-- Navigation Links -->
             <div class="flex flex-col items-center gap-6 w-full">
               <a href="#" class="mobile-nav-link">Home</a>
@@ -1240,25 +1240,17 @@
 
       function toggleMobileMenu(show) {
         const menu = document.getElementById('mobileMenu');
-        const overlay = document.getElementById('mobileMenuOverlay');
-        const mainContent = document.querySelector('main');
         const links = menu.querySelectorAll('.mobile-nav-link, .mobile-nav-button');
         
         if (show) {
-          // Show menu and overlay
+          // Show menu
           menu.classList.remove('hidden');
-          overlay.classList.remove('hidden');
           document.body.style.overflow = 'hidden';
+          // Prevent body scroll and any horizontal movement
+          document.body.style.width = '100%';
+          document.body.style.position = 'fixed';
           
-          // Add strong blur to main content
-          mainContent.classList.add('content-blur');
-          
-          // Fade in overlay
-          requestAnimationFrame(() => {
-            overlay.classList.add('overlay-visible');
-          });
-          
-          // Add backdrop blur with increased intensity
+          // Add backdrop blur
           menu.classList.add('backdrop-blur-in');
           
           // Animate in links with delay
@@ -1269,19 +1261,18 @@
           });
           
           // Slide in menu
-          setTimeout(() => {
+          requestAnimationFrame(() => {
             menu.classList.add('translate-x-0');
             menu.classList.remove('translate-x-full');
-          }, 10);
+          });
         } else {
-          // Hide menu and overlay
+          // Hide menu
           menu.classList.add('translate-x-full');
           menu.classList.remove('translate-x-0');
-          overlay.classList.remove('overlay-visible');
+          // Restore body scroll
           document.body.style.overflow = '';
-          
-          // Remove blur from main content
-          mainContent.classList.remove('content-blur');
+          document.body.style.position = '';
+          document.body.style.width = '';
           
           // Reset animations
           links.forEach(link => {
@@ -1294,7 +1285,6 @@
           // Wait for animation to complete before hiding
           setTimeout(() => {
             menu.classList.add('hidden');
-            overlay.classList.add('hidden');
           }, 500);
         }
       }
