@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Science & GenAI Mastery Program</title>
+    <meta name="description" content="Master Python, Machine Learning, AI Agent Development & Cloud Deployment in Just 14 Weeks" />
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Data Science & GenAI Mastery Program" />
+    <meta property="og:description" content="Master Python, Machine Learning, AI Agent Development & Cloud Deployment in Just 14 Weeks" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@dataspark_academy" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
+    
+    <!-- AOS Animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    
+    
+  </head>
+  
+  <body class="bg-white">
+    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
+      <div class="container-custom">
+        <div class="flex items-center justify-between h-20">
+          <!-- Logo -->
+          <a href="#" class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+              <line x1="12" y1="22.08" x2="12" y2="12"></line>
+            </svg>
+            <span class="text-xl font-bold text-gray-900">DataSpark</span>
+          </a>
+
+          <!-- Desktop Navigation -->
+          <nav class="hidden md:flex items-center gap-8">
+            <a href="#" class="text-gray-600 hover:text-primary transition-colors">Home</a>
+            <a href="#" class="text-gray-600 hover:text-primary transition-colors">Program</a>
+            <a href="#" class="text-gray-600 hover:text-primary transition-colors">Curriculum</a>
+            <a href="#" class="text-gray-600 hover:text-primary transition-colors">Mentors</a>
+            <a href="#" class="text-gray-600 hover:text-primary transition-colors">Career Support</a>
+          </nav>
+
+          <!-- CTA Buttons -->
+          <div class="hidden md:flex items-center gap-4">
+            <a href="#" class="text-primary hover:text-primary-dark transition-colors">Login</a>
+            <a href="#apply" class="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-md transition-all hover:shadow-lg">
+              Apply Now
+            </a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button 
+            id="mobileMenuBtn"
+            class="md:hidden p-2 rounded-md hover:bg-gray-100 transition-colors"
+            aria-label="Menu"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Add this overlay div right after the header -->
+      <div id="mobileMenuOverlay" class="hidden fixed inset-0 bg-black/40 backdrop-blur-lg z-30 transition-all duration-500"></div>
+
+      <!-- Mobile Menu -->
+      <div 
+        id="mobileMenu" 
+        class="md:hidden fixed inset-0 bg-white/95 backdrop-blur-xl z-40 hidden transform transition-all duration-500 ease-in-out"
+        style="height: 100vh;"
+      >
+        <!-- Header Section -->
+        <div class="h-20 border-b border-gray-200 flex items-center justify-between px-6">
+          <div class="flex-1">
+            <button 
+              id="closeMobileMenu"
+              class="p-2 rounded-full hover:bg-gray-100 transition-all duration-300 active:scale-95"
+              aria-label="Close Menu"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+          
+          <div class="flex items-center gap-2 flex-1 justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary animate-pulse">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+              <line x1="12" y1="22.08" x2="12" y2="12"></line>
+            </svg>
+            <span class="text-xl font-bold text-gray-900">DataSpark</span>
+          </div>
+          
+          <div class="flex-1"></div>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav class="h-[calc(100vh-5rem)] overflow-y-auto py-8">
+          <div class="container-custom flex flex-col items-center gap-6">
+            <!-- Navigation Links -->
+            <div class="flex flex-col items-center gap-6 w-full">
+              <a href="#" class="mobile-nav-link">Home</a>
+              <a href="#" class="mobile-nav-link">Program</a>
+              <a href="#" class="mobile-nav-link">Curriculum</a>
+              <a href="#" class="mobile-nav-link">Mentors</a>
+              <a href="#" class="mobile-nav-link">Career Support</a>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col items-center gap-4 w-full mt-4 pt-6 border-t border-gray-200">
+              <a href="#" class="mobile-nav-button bg-transparent text-primary hover:bg-primary/5">
+                Login
+              </a>
+              <a href="#apply" class="mobile-nav-button bg-primary text-white hover:bg-primary-dark">
+                Apply Now
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Spacer for fixed header -->
+    <div class="h-20"></div>
+    
+    <!-- Hero Section -->
+    <div class="relative bg-gradient-to-br from-primary/90 to-primary-light overflow-hidden">
+      <!-- Background Elements -->
+      <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+        <div class="absolute top-1/2 -left-24 w-64 h-64 bg-secondary/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 right-1/3 w-80 h-80 bg-white/5 rounded-full blur-3xl"></div>
+      </div>
+      
+      <div class="container-custom relative z-10 min-h-[85vh] flex flex-col justify-center">
+        <div class="max-w-3xl">
+          <h1 
+            class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
+            data-aos="fade-right"
+          >
+            Become a Data Scientist <span class="text-secondary">Supercharged</span> by GenAI
+          </h1>
+          <p 
+            class="text-lg md:text-xl text-white/90 mb-8 max-w-2xl"
+            data-aos="fade-right"
+            data-aos-delay="100"
+          >
+            Master Python, Machine Learning, AI Agent Development & Cloud Deployment in Just 14 Weeks
+          </p>
+          
+          <div 
+            class="flex flex-col sm:flex-row gap-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <a href="#apply" class="bg-secondary hover:bg-secondary-dark text-white px-8 py-6 rounded-md text-lg flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transition-all">
+              Apply Now <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 h-5 w-5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="#" class="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20 text-white px-8 py-6 rounded-md text-lg flex items-center justify-center gap-2">
+              Download Brochure <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 h-5 w-5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Floating Element -->
+        <div class="hidden lg:block absolute right-10 top-1/4 w-80 h-80">
+          <div class="relative w-full h-full animate-float">
+            <div class="absolute inset-0 bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 shadow-2xl">
+              <div class="w-16 h-2 bg-gradient-to-r from-secondary to-secondary-light rounded-full mb-4"></div>
+              <div class="h-24 w-full bg-white/10 rounded-xl mb-4 animate-pulse"></div>
+              <div class="grid grid-cols-2 gap-3">
+                <div class="h-16 bg-white/10 rounded-lg"></div>
+                <div class="h-16 bg-white/10 rounded-lg"></div>
+                <div class="h-16 bg-white/10 rounded-lg"></div>
+                <div class="h-16 bg-white/10 rounded-lg"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent"></div>
+    </div>
+
+    <!-- Industry Quotes Section -->
+    <section class="bg-white section-padding">
+      <div class="container-custom">
+        <h2 
+          class="text-3xl md:text-4xl font-bold text-center mb-4" 
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
+          What the <span class="text-primary">Industry</span> is Saying
+        </h2>
+        <p 
+          class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="100"
+        >
+          The fusion of Data Science and Generative AI is creating unprecedented career opportunities
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Quote Card 1 -->
+          <div
+            class="p-6 shadow-md hover:shadow-xl transition-all duration-500 border border-gray-100 h-full flex flex-col card-hover rounded-lg bg-white"
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-offset="200"
+          >
+            <div class="mb-4 flex items-center transform transition-transform duration-500 hover:scale-105">
+              <div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold">
+                M
+              </div>
+              <div class="ml-3">
+                <p class="font-semibold text-sm">McKinsey Global</p>
+                <p class="text-xs text-gray-500">Industry Report</p>
+              </div>
+            </div>
+            <blockquote class="text-gray-700 flex-grow">"By 2025, data scientists with GenAI expertise will command 40% higher salaries than their traditional counterparts."</blockquote>
+            <p class="text-primary text-sm mt-4 font-medium">Tech Trends 2023</p>
+          </div>
+
+          <!-- Quote Card 2 -->
+          <div
+            class="p-6 shadow-md hover:shadow-xl transition-all duration-500 border border-gray-100 h-full flex flex-col card-hover rounded-lg bg-white"
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-offset="200"
+            data-aos-delay="100"
+          >
+            <div class="mb-4 flex items-center transform transition-transform duration-500 hover:scale-105">
+              <div class="w-10 h-10 rounded-full bg-red-500 flex items-center justify-center text-white font-bold">
+                F
+              </div>
+              <div class="ml-3">
+                <p class="font-semibold text-sm">Forbes</p>
+                <p class="text-xs text-gray-500">Tech Insights</p>
+              </div>
+            </div>
+            <blockquote class="text-gray-700 flex-grow">"Companies integrating GenAI with data science see a 32% increase in operational efficiency and innovation outcomes."</blockquote>
+            <p class="text-primary text-sm mt-4 font-medium">Future of Work</p>
+          </div>
+
+          <!-- Quote Card 3 -->
+          <div
+            class="p-6 shadow-md hover:shadow-xl transition-all duration-500 border border-gray-100 h-full flex flex-col card-hover rounded-lg bg-white"
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-offset="200"
+            data-aos-delay="200"
+          >
+            <div class="mb-4 flex items-center transform transition-transform duration-500 hover:scale-105">
+              <div class="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center text-white font-bold">
+                L
+              </div>
+              <div class="ml-3">
+                <p class="font-semibold text-sm">LinkedIn</p>
+                <p class="text-xs text-gray-500">Economic Graph</p>
+              </div>
+            </div>
+            <blockquote class="text-gray-700 flex-grow">"The demand for professionals who can merge traditional data science with generative AI has grown 178% in the last year."</blockquote>
+            <p class="text-primary text-sm mt-4 font-medium">Emerging Jobs</p>
+          </div>
+
+          <!-- Quote Card 4 -->
+          <div
+            class="p-6 shadow-md hover:shadow-xl transition-all duration-500 border border-gray-100 h-full flex flex-col card-hover rounded-lg bg-white"
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-offset="200"
+            data-aos-delay="300"
+          >
+            <div class="mb-4 flex items-center transform transition-transform duration-500 hover:scale-105">
+              <div class="w-10 h-10 rounded-full bg-purple-500 flex items-center justify-center text-white font-bold">
+                G
+              </div>
+              <div class="ml-3">
+                <p class="font-semibold text-sm">Gartner</p>
+                <p class="text-xs text-gray-500">Tech Research</p>
+              </div>
+            </div>
+            <blockquote class="text-gray-700 flex-grow">"Data scientists who can build and deploy GenAI solutions are the most sought-after tech professionals in 2023."</blockquote>
+            <p class="text-primary text-sm mt-4 font-medium">Market Analysis</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Program Benefits Section -->
+    <section class="bg-section-gradient section-padding">
+      <div class="container-custom">
+        <h2 
+          class="text-3xl md:text-4xl font-bold text-center mb-4" 
+          data-aos="fade-up"
+        >
+          Why Choose <span class="text-primary">This Program</span>?
+        </h2>
+        <p 
+          class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          Our comprehensive program is designed to transform beginners into job-ready data scientists
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Benefit 1 -->
+          <div 
+            class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100"
+            data-aos="zoom-in"
+            data-aos-delay="50"
+          >
+            <div class="mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2 text-gray-800">Industry-Ready Skills</h3>
+            <p class="text-gray-600">Learn the exact skills companies are hiring for right now, with curriculum informed by top tech employers</p>
+          </div>
+
+          <!-- Benefit 2 -->
+          <div 
+            class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100"
+            data-aos="zoom-in"
+            data-aos-delay="100"
+          >
+            <div class="mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2 text-gray-800">Expert Instructors</h3>
+            <p class="text-gray-600">Learn from practitioners with 10+ years of industry experience in data science and AI implementation</p>
+          </div>
+
+          <!-- Benefit 3 -->
+          <div 
+            class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100"
+            data-aos="zoom-in"
+            data-aos-delay="150"
+          >
+            <div class="mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2 text-gray-800">Hands-On Projects</h3>
+            <p class="text-gray-600">Build a portfolio with 12+ real-world projects and capstone work that demonstrates your skills to employers</p>
+          </div>
+
+          <!-- Benefit 4 -->
+          <div 
+            class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100"
+            data-aos="zoom-in"
+            data-aos-delay="200"
+          >
+            <div class="mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2 text-gray-800">Career Acceleration</h3>
+            <p class="text-gray-600">Graduate with job-ready skills and 1:1 career support to help you secure roles with our 45+ hiring partners</p>
+          </div>
+
+          <!-- Benefit 5 -->
+          <div 
+            class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100"
+            data-aos="zoom-in"
+            data-aos-delay="250"
+          >
+            <div class="mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2 text-gray-800">Future-Proof Learning</h3>
+            <p class="text-gray-600">Master both traditional data science foundations and cutting-edge GenAI techniques that will define the next decade</p>
+          </div>
+
+          <!-- Benefit 6 -->
+          <div 
+            class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100"
+            data-aos="zoom-in"
+            data-aos-delay="300"
+          >
+            <div class="mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2 text-gray-800">Community Access</h3>
+            <p class="text-gray-600">Join a vibrant community of like-minded learners and alumni working at top tech companies globally</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section class="bg-white section-padding">
+      <div class="container-custom">
+        <h2 
+          class="text-3xl md:text-4xl font-bold text-center mb-4"
+          data-aos="fade-up" 
+        >
+          What You Will <span class="text-primary">Learn</span>
+        </h2>
+        <p 
+          class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          Our comprehensive curriculum covers everything you need to become a job-ready data scientist
+        </p>
+        
+        <div class="mt-8" data-aos="fade-up" data-aos-delay="150">
+          <!-- Tab Navigation -->
+          <div class="flex flex-wrap justify-center gap-2 mb-8" role="tablist">
+            <button class="tab-button active flex items-center gap-2 px-4 py-3 bg-primary text-white rounded-md" data-tab="core">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              <span class="hidden md:inline">Core Modules</span>
+            </button>
+            <button class="tab-button flex items-center gap-2 px-4 py-3 bg-gray-100 text-gray-700 rounded-md" data-tab="aiml">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><circle cx="12" cy="12" r="10"></circle><path d="M12 16c2.5 0 5-1.2 5-4s-2.5-6-5-6-5 3.2-5 6 2.5 4 5 4z"></path></svg>
+              <span class="hidden md:inline">AI & ML</span>
+            </button>
+            <button class="tab-button flex items-center gap-2 px-4 py-3 bg-gray-100 text-gray-700 rounded-md" data-tab="genai">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+              <span class="hidden md:inline">GenAI Tools</span>
+            </button>
+            <button class="tab-button flex items-center gap-2 px-4 py-3 bg-gray-100 text-gray-700 rounded-md" data-tab="cloud">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+              <span class="hidden md:inline">Cloud & Deployment</span>
+            </button>
+            <button class="tab-button flex items-center gap-2 px-4 py-3 bg-gray-100 text-gray-700 rounded-md" data-tab="capstone">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              <span class="hidden md:inline">Capstone Project</span>
+            </button>
+          </div>
+          
+          <!-- Tab Content -->
+          <div class="tab-content">
+            <!-- Core Modules Tab -->
+            <div class="tab-pane active" id="core">
+              <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                <h3 class="text-2xl font-bold text-primary mb-6 flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                  Core Modules
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div class="flex items-center gap-2 bg-white p-4 rounded-lg shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 flex-shrink-0"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    <span>Python Programming Fundamentals</span>
+                  </div>
+                  <div class="flex items-center gap-2 bg-white p-4 rounded-lg shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 flex-shrink-0"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    <span>Data Structures & Algorithms</span>
+                  </div>
+                  <div class="flex items-center gap-2 bg-white p-4 rounded-lg shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 flex-shrink-0"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    <span>Data Analysis with Pandas & NumPy</span>
+                  </div>
+                  <div class="flex items-center gap-2 bg-white p-4 rounded-lg shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 flex-shrink-0"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    <span>Data Visualization with Matplotlib & Seaborn</span>
+                  </div>
+                  <div class="flex items-center gap-2 bg-white p-4 rounded-lg shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 flex-shrink-0"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    <span>SQL & Database Management</span>
+                  </div>
+                  <div class="flex items-center gap-2 bg-white p-4 rounded-lg shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 flex-shrink-0"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    <span>Statistical Analysis for Data Science</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- AI & ML Tab -->
+            <div class="tab-pane hidden" id="aiml">
+              <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                <h3 class="text-2xl font-bold text-primary mb-6 flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><circle cx="12" cy="12" r="10"></circle><path d="M12 16c2.5 0 5-1.2 5-4s-2.5-6-5-6-5 3.2-5 6 2.5 4 5 4z"></path></svg>
+                  AI & ML
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div class="flex items-center gap-2 bg-white p-4 rounded-lg shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 flex-shrink-0"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    <span>Machine Learning Fundamentals</span>
+                  </div>
+                  <div class="flex items-center gap-2 bg-white p-4 rounded-lg shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 flex-shrink-0"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    <span>Supervised Learning Algorithms</span>
+                  </div>
+                  <div class="flex items-center gap-2 bg-white p-4 rounded-lg shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 flex-shrink-0"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    <span>Unsupervised Learning & Clustering</span>
+                  </div>
+                  <div class="flex items-center gap-2 bg-white p-4 rounded-lg shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 flex-shrink-0"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    <span>Deep Learning with TensorFlow & PyTorch</span>
+                  </div>
+                  <div class="flex items-center gap-2 bg-white p-4 rounded-lg shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 flex-shrink-0"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    <span>Natural Language Processing</span>
+                  </div>
+                  <div class="flex items-center gap-2 bg-white p-4 rounded-lg shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 flex-shrink-0"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    <span>Computer Vision Fundamentals</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- GenAI Tools Tab -->
+            <div class="tab-pane hidden" id="genai">
+              <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                <h3 class="text-2xl font-bold text-primary mb-6 flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+                  GenAI Tools
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div class="flex items-center gap-2 bg-white p-4 rounded-lg shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 flex-shrink-0"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    <span>Large Language Models (LLMs)</span>
+                  </div>
+                  <div class="flex items-center gap-2 bg-white p-4 rounded-lg shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 flex-shrink-0"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    <span>Prompt Engineering Techniques</span>
+                  </div>
+                  <div class="flex items-center gap-2 bg-white p-4 rounded-lg shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 flex-shrink-0"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    <span>Fine-tuning & Customizing LLMs</span>
+                  </div>
+                  <div class="flex items-center gap-2 bg-white p-4 rounded-lg shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 flex-shrink-0"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    <span>Building AI Agents & Assistants</span>
+                  </div>
+                  <div class="flex items-center gap-2 bg-white p-4 rounded-lg shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 flex-shrink-0"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    <span>Ethical AI & Responsible Deployment</span>
+                  </div>
+                  <div class="flex items-center gap-2 bg-white p-4 rounded-lg shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 flex-shrink-0"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    <span>GenAI Applications Development</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Cloud & Deployment Tab -->
+            <div class="tab-pane hidden" id="cloud">
+              <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                <h3 class="text-2xl font-bold text-primary mb-6 flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+                  Cloud & Deployment
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div class="flex items-center gap-2 bg-white p-4 rounded-lg shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 flex-shrink-0"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    <span>Model Deployment Fundamentals</span>
+                  </div>
+                  <div class="flex items-center gap-2 bg-white p-4 rounded-lg shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 flex-shrink-0"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    <span>Building ML Pipelines</span>
+                  </div>
+                  <div class="flex items-center gap-2 bg-white p-4 rounded-lg shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 flex-shrink-0"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    <span>AWS & Azure Cloud Services</span>
+                  </div>
+                  <div class="flex items-center gap-2 bg-white p-4 rounded-lg shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 flex-shrink-0"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    <span>Docker & Containerization</span>
+                  </div>
+                  <div class="flex items-center gap-2 bg-white p-4 rounded-lg shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 flex-shrink-0"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    <span>MLOps Fundamentals</span>
+                  </div>
+                  <div class="flex items-center gap-2 bg-white p-4 rounded-lg shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 flex-shrink-0"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    <span>Scalable AI System Design</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Capstone Project Tab -->
+            <div class="tab-pane hidden" id="capstone">
+              <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                <h3 class="text-2xl font-bold text-primary mb-6 flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                  Capstone Project
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div class="flex items-center gap-2 bg-white p-4 rounded-lg shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 flex-shrink-0"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    <span>End-to-End AI Solution Development</span>
+                  </div>
+                  <div class="flex items-center gap-2 bg-white p-4 rounded-lg shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 flex-shrink-0"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    <span>Real-World Business Problem Solving</span>
+                  </div>
+                  <div class="flex items-center gap-2 bg-white p-4 rounded-lg shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 flex-shrink-0"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    <span>Industry Partner Collaboration</span>
+                  </div>
+                  <div class="flex items-center gap-2 bg-white p-4 rounded-lg shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 flex-shrink-0"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    <span>Portfolio Development</span>
+                  </div>
+                  <div class="flex items-center gap-2 bg-white p-4 rounded-lg shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 flex-shrink-0"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    <span>Project Presentation & Documentation</span>
+                  </div>
+                  <div class="flex items-center gap-2 bg-white p-4 rounded-lg shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 flex-shrink-0"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    <span>Technical Interview Preparation</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Target Audience Section -->
+    <section class="bg-section-gradient section-padding">
+      <div class="container-custom">
+        <h2 
+          class="text-3xl md:text-4xl font-bold text-center mb-4"
+          data-aos="fade-up"
+        >
+          Who Should <span class="text-primary">Join</span>?
+        </h2>
+        <p 
+          class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12"
+          data-aos="fade-up" 
+          data-aos-delay="100"
+        >
+          Our program is designed for diverse backgrounds, united by a passion for data and AI
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Persona 1 -->
+          <div 
+            class="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-xl transition-all card-hover"
+            data-aos="fade-up"
+            data-aos-delay="0"
+          >
+            <div class="flex justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#1A1F2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 text-primary"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path></svg>
+            </div>
+            <h3 class="text-xl font-semibold text-center mb-3">Fresh Graduates</h3>
+            <p class="text-gray-600 text-sm text-center mb-4">Transform your theoretical knowledge into practical skills that make you job-ready for the tech industry</p>
+            <ul class="space-y-2">
+              <li class="text-sm flex items-center">
+                <span class="w-2 h-2 bg-secondary rounded-full mr-2 flex-shrink-0"></span>
+                <span>No prior coding experience required</span>
+              </li>
+              <li class="text-sm flex items-center">
+                <span class="w-2 h-2 bg-secondary rounded-full mr-2 flex-shrink-0"></span>
+                <span>Build industry-relevant portfolio</span>
+              </li>
+              <li class="text-sm flex items-center">
+                <span class="w-2 h-2 bg-secondary rounded-full mr-2 flex-shrink-0"></span>
+                <span>Start a high-growth career path</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Persona 2 -->
+          <div 
+            class="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-xl transition-all card-hover"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="flex justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#1A1F2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 text-primary"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            </div>
+            <h3 class="text-xl font-semibold text-center mb-3">Software Developers</h3>
+            <p class="text-gray-600 text-sm text-center mb-4">Expand your skill set to include data science and AI, opening up new career opportunities and higher pay</p>
+            <ul class="space-y-2">
+              <li class="text-sm flex items-center">
+                <span class="w-2 h-2 bg-secondary rounded-full mr-2 flex-shrink-0"></span>
+                <span>Leverage existing programming knowledge</span>
+              </li>
+              <li class="text-sm flex items-center">
+                <span class="w-2 h-2 bg-secondary rounded-full mr-2 flex-shrink-0"></span>
+                <span>Add ML/AI to your toolkit</span>
+              </li>
+              <li class="text-sm flex items-center">
+                <span class="w-2 h-2 bg-secondary rounded-full mr-2 flex-shrink-0"></span>
+                <span>Transition to data-focused roles</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Persona 3 -->
+          <div 
+            class="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-xl transition-all card-hover"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="flex justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#1A1F2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 text-primary"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+            </div>
+            <h3 class="text-xl font-semibold text-center mb-3">Career Switchers</h3>
+            <p class="text-gray-600 text-sm text-center mb-4">Make a successful transition into the high-demand field of data science with our structured learning path</p>
+            <ul class="space-y-2">
+              <li class="text-sm flex items-center">
+                <span class="w-2 h-2 bg-secondary rounded-full mr-2 flex-shrink-0"></span>
+                <span>Step-by-step skill building</span>
+              </li>
+              <li class="text-sm flex items-center">
+                <span class="w-2 h-2 bg-secondary rounded-full mr-2 flex-shrink-0"></span>
+                <span>Hands-on learning approach</span>
+              </li>
+              <li class="text-sm flex items-center">
+                <span class="w-2 h-2 bg-secondary rounded-full mr-2 flex-shrink-0"></span>
+                <span>Career transition support</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Persona 4 -->
+          <div 
+            class="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-xl transition-all card-hover"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="flex justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#1A1F2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 text-primary"><circle cx="12" cy="12" r="10"></circle><path d="M12 16c2.5 0 5-1.2 5-4s-2.5-6-5-6-5 3.2-5 6 2.5 4 5 4z"></path></svg>
+            </div>
+            <h3 class="text-xl font-semibold text-center mb-3">Curious Builders</h3>
+            <p class="text-gray-600 text-sm text-center mb-4">Learn to build cutting-edge AI applications that can solve real problems and showcase your creativity</p>
+            <ul class="space-y-2">
+              <li class="text-sm flex items-center">
+                <span class="w-2 h-2 bg-secondary rounded-full mr-2 flex-shrink-0"></span>
+                <span>Project-based curriculum</span>
+              </li>
+              <li class="text-sm flex items-center">
+                <span class="w-2 h-2 bg-secondary rounded-full mr-2 flex-shrink-0"></span>
+                <span>Create your own AI solutions</span>
+              </li>
+              <li class="text-sm flex items-center">
+                <span class="w-2 h-2 bg-secondary rounded-full mr-2 flex-shrink-0"></span>
+                <span>Join an innovative community</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mentors Section -->
+    <section class="bg-white section-padding">
+      <div class="container-custom">
+        <h2 
+          class="text-3xl md:text-4xl font-bold text-center mb-4"
+          data-aos="fade-up"
+        >
+          Your <span class="text-primary">Mentors</span> Include
+        </h2>
+        <p 
+          class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          Learn directly from industry experts with proven track records at top tech companies
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Mentor 1 -->
+          <div 
+            class="bg-white border border-gray-100 rounded-xl shadow-md p-6 flex flex-col items-center text-center hover:shadow-xl transition-all card-hover"
+            data-aos="fade-up"
+            data-aos-delay="0"
+          >
+            <div class="w-24 h-24 rounded-full mb-4 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80" alt="Dr. Sarah Johnson" class="w-full h-full object-cover">
+            </div>
+            <h3 class="text-xl font-semibold">Dr. Sarah Johnson</h3>
+            <p class="text-primary font-medium">Lead Data Scientist</p>
+            <p class="text-gray-500 text-sm mb-3">Former Google AI</p>
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-accent text-primary mb-2">
+              Machine Learning
+            </span>
+            <p class="text-sm text-gray-600">12+ years experience</p>
+          </div>
+
+          <!-- Mentor 2 -->
+          <div 
+            class="bg-white border border-gray-100 rounded-xl shadow-md p-6 flex flex-col items-center text-center hover:shadow-xl transition-all card-hover"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="w-24 h-24 rounded-full mb-4 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80" alt="Michael Chen" class="w-full h-full object-cover">
+            </div>
+            <h3 class="text-xl font-semibold">Michael Chen</h3>
+            <p class="text-primary font-medium">AI Research Lead</p>
+            <p class="text-gray-500 text-sm mb-3">Meta</p>
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-accent text-primary mb-2">
+              NLP & LLMs
+            </span>
+            <p class="text-sm text-gray-600">10+ years experience</p>
+          </div>
+
+          <!-- Mentor 3 -->
+          <div 
+            class="bg-white border border-gray-100 rounded-xl shadow-md p-6 flex flex-col items-center text-center hover:shadow-xl transition-all card-hover"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="w-24 h-24 rounded-full mb-4 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80" alt="Priya Sharma" class="w-full h-full object-cover">
+            </div>
+            <h3 class="text-xl font-semibold">Priya Sharma</h3>
+            <p class="text-primary font-medium">GenAI Product Head</p>
+            <p class="text-gray-500 text-sm mb-3">Microsoft</p>
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-accent text-primary mb-2">
+              AI Product Development
+            </span>
+            <p class="text-sm text-gray-600">8+ years experience</p>
+          </div>
+
+          <!-- Mentor 4 -->
+          <div 
+            class="bg-white border border-gray-100 rounded-xl shadow-md p-6 flex flex-col items-center text-center hover:shadow-xl transition-all card-hover"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="w-24 h-24 rounded-full mb-4 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80" alt="James Wilson" class="w-full h-full object-cover">
+            </div>
+            <h3 class="text-xl font-semibold">James Wilson</h3>
+            <p class="text-primary font-medium">MLOps Specialist</p>
+            <p class="text-gray-500 text-sm mb-3">AWS</p>
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-accent text-primary mb-2">
+              Cloud Deployment
+            </span>
+            <p class="text-sm text-gray-600">9+ years experience</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Career Support Section -->
+    <section class="bg-section-gradient section-padding">
+      <div class="container-custom">
+        <h2 
+          class="text-3xl md:text-4xl font-bold text-center mb-4"
+          data-aos="fade-up"
+        >
+          Career Support That <span class="text-primary">Delivers</span>
+        </h2>
+        <p 
+          class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          We don't just teach you skills—we help you land your dream job in data science
+        </p>
+        
+        <div 
+          class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16"
+          data-aos="fade-up"
+          data-aos-delay="150"
+        >
+          <div class="p-6 text-center border-none shadow-lg bg-gradient-to-br from-primary/90 to-primary text-white rounded-md">
+            <h3 class="text-2xl md:text-3xl font-bold">275+</h3>
+            <p class="text-white/80">Job Offers</p>
+          </div>
+          <div class="p-6 text-center border-none shadow-lg bg-gradient-to-br from-primary/90 to-primary text-white rounded-md">
+            <h3 class="text-2xl md:text-3xl font-bold">47+</h3>
+            <p class="text-white/80">Hiring Partners</p>
+          </div>
+          <div class="p-6 text-center border-none shadow-lg bg-gradient-to-br from-primary/90 to-primary text-white rounded-md">
+            <h3 class="text-2xl md:text-3xl font-bold">₹7.5 LPA</h3>
+            <p class="text-white/80">Highest Package</p>
+          </div>
+          <div class="p-6 text-center border-none shadow-lg bg-gradient-to-br from-primary/90 to-primary text-white rounded-md">
+            <h3 class="text-2xl md:text-3xl font-bold">92%</h3>
+            <p class="text-white/80">Placement Rate</p>
+          </div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Career Support Feature 1 -->
+          <div 
+            class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all border border-gray-100 flex gap-4"
+            data-aos="fade-up"
+            data-aos-delay="0"
+          >
+            <div class="flex-shrink-0 mt-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A1F2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-primary"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-2">1:1 Career Mentorship</h3>
+              <p class="text-gray-600 text-sm">Get personalized guidance from industry experts who help you navigate your job search</p>
+            </div>
+          </div>
+
+          <!-- Career Support Feature 2 -->
+          <div 
+            class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all border border-gray-100 flex gap-4"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <div class="flex-shrink-0 mt-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A1F2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-primary"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><path d="M9 15l3 3l6-6"></path></svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-2">Resume Building</h3>
+              <p class="text-gray-600 text-sm">Craft an ATS-optimized resume that highlights your new skills and projects</p>
+            </div>
+          </div>
+
+          <!-- Career Support Feature 3 -->
+          <div 
+            class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all border border-gray-100 flex gap-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="flex-shrink-0 mt-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A1F2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-primary"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-2">Mock Interviews</h3>
+              <p class="text-gray-600 text-sm">Practice technical and behavioral interviews with experienced hiring managers</p>
+            </div>
+          </div>
+
+          <!-- Career Support Feature 4 -->
+          <div 
+            class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all border border-gray-100 flex gap-4"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            <div class="flex-shrink-0 mt-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A1F2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-primary"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-2">Portfolio Development</h3>
+              <p class="text-gray-600 text-sm">Build a GitHub portfolio showcasing your projects to impress potential employers</p>
+            </div>
+          </div>
+
+          <!-- Career Support Feature 5 -->
+          <div 
+            class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all border border-gray-100 flex gap-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="flex-shrink-0 mt-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A1F2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-primary"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-2">Networking Events</h3>
+              <p class="text-gray-600 text-sm">Connect with industry professionals and alumni through exclusive networking sessions</p>
+            </div>
+          </div>
+
+          <!-- Career Support Feature 6 -->
+          <div 
+            class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all border border-gray-100 flex gap-4"
+            data-aos="fade-up"
+            data-aos-delay="250"
+          >
+            <div class="flex-shrink-0 mt-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A1F2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-primary"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-2">Hiring Partner Network</h3>
+              <p class="text-gray-600 text-sm">Access job opportunities with our 45+ hiring partners across tech and non-tech sectors</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Program Details Section -->
+    <section class="bg-white section-padding" id="apply">
+      <div class="container-custom">
+        <h2 
+          class="text-3xl md:text-4xl font-bold text-center mb-4"
+          data-aos="fade-up"
+        >
+          Program <span class="text-primary">Details</span>
+        </h2>
+        <p 
+          class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          Everything you need to know about joining our Data Science & GenAI Mastery Program
+        </p>
+        
+        <div class="max-w-3xl mx-auto">
+          <div 
+            class="p-8 border border-gray-200 shadow-lg rounded-xl"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-accent flex items-center justify-center flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-secondary"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                </div>
+                <div>
+                  <p class="text-sm text-gray-500">Duration</p>
+                  <p class="font-semibold">14 Weeks</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-accent flex items-center justify-center flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-secondary"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                </div>
+                <div>
+                  <p class="text-sm text-gray-500">Next Batch Starts</p>
+                  <p class="font-semibold">May 15, 2025</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-accent flex items-center justify-center flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-secondary"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                </div>
+                <div>
+                  <p class="text-sm text-gray-500">Learning Mode</p>
+                  <p class="font-semibold">Live Online Classes</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-accent flex items-center justify-center flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-secondary"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                </div>
+                <div>
+                  <p class="text-sm text-gray-500">Certification</p>
+                  <p class="font-semibold">Industry-Recognized</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-accent flex items-center justify-center flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-secondary"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+                </div>
+                <div>
+                  <p class="text-sm text-gray-500">Program Fee</p>
+                  <p class="font-semibold">₹75,000</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="border-t border-gray-200 pt-6 mt-2">
+              <div class="flex flex-col items-center">
+                <p class="text-lg mb-4 text-center">Ready to transform your career with in-demand skills?</p>
+                <a href="#" class="inline-block bg-secondary hover:bg-secondary-dark text-white px-8 py-6 rounded-md text-lg shadow-lg hover:shadow-xl transition-all">
+                  Apply Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+      <div class="container-custom">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div>
+            <h3 class="text-xl font-bold mb-4">DataSpark Academy</h3>
+            <p class="text-gray-400 mb-4">
+              Transforming careers through cutting-edge data science and AI education.
+            </p>
+            <div class="flex gap-4">
+              <a href="#" class="text-gray-400 hover:text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              </a>
+            </div>
+          </div>
+          
+          <div>
+            <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Programs</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Testimonials</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">FAQs</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 class="text-lg font-bold mb-4">Contact Us</h3>
+            <ul class="space-y-3">
+              <li class="flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-secondary"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <a href="mailto:info@dataspark.academy" class="text-gray-400 hover:text-white">
+                  info@dataspark.academy
+                </a>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-secondary"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <a href="tel:+918800123456" class="text-gray-400 hover:text-white">
+                  +91 88001 23456
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 class="text-lg font-bold mb-4">Newsletter</h3>
+            <p class="text-gray-400 mb-4">Stay updated with our latest courses and news</p>
+            <form class="flex gap-2">
+              <input type="email" placeholder="Your email" class="bg-gray-800 border-gray-700 text-white px-4 py-2 rounded-md flex-grow">
+              <button type="submit" class="bg-secondary hover:bg-secondary-dark text-white px-4 py-2 rounded-md">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        
+        <div class="border-t border-gray-800 pt-8 mt-8 text-center text-gray-500">
+          <p>© 2025 DataSpark Academy. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating CTA -->
+    <div id="floatingCTA" class="hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-xl p-4 z-50 flex justify-between items-center">
+      <div class="flex-1 hidden sm:block">
+        <h3 class="font-bold text-lg">Ready to transform your career?</h3>
+        <p class="text-gray-600">Limited seats available for upcoming batch</p>
+      </div>
+      <div class="flex gap-3 flex-1 justify-center sm:justify-end">
+        <a href="#" class="bg-secondary hover:bg-secondary-dark text-white px-4 py-2 rounded-md flex items-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          Book Free Counseling
+        </a>
+        <a href="#" class="border-primary text-primary hover:bg-primary hover:text-white border px-4 py-2 rounded-md hidden sm:flex items-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          Brochure
+        </a>
+      </div>
+      <button 
+        id="dismissCTA"
+        class="ml-4 text-gray-500 hover:text-gray-700"
+        aria-label="Dismiss"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+
+    <!-- Initialize AOS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+      // Initialize AOS
+      document.addEventListener('DOMContentLoaded', function() {
+        AOS.init({
+          duration: 800,
+          once: true,
+          easing: 'ease-in-out'
+        });
+        
+        // Tabs functionality
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabPanes = document.querySelectorAll('.tab-pane');
+        
+        tabButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            const tabId = button.getAttribute('data-tab');
+            
+            // Remove active class from all buttons and panes
+            tabButtons.forEach(btn => btn.classList.remove('active', 'bg-primary', 'text-white'));
+            tabButtons.forEach(btn => btn.classList.add('bg-gray-100', 'text-gray-700'));
+            tabPanes.forEach(pane => pane.classList.add('hidden'));
+            
+            // Add active class to current button and pane
+            button.classList.add('active', 'bg-primary', 'text-white');
+            button.classList.remove('bg-gray-100', 'text-gray-700');
+            document.getElementById(tabId).classList.remove('hidden');
+          });
+        });
+        
+        // Floating CTA
+        const floatingCTA = document.getElementById('floatingCTA');
+        const dismissCTA = document.getElementById('dismissCTA');
+        let isDismissed = false;
+        
+        function handleScroll() {
+          const scrollY = window.scrollY;
+          if (scrollY > window.innerHeight * 0.5 && !isDismissed) {
+            floatingCTA.classList.remove('hidden');
+            floatingCTA.classList.add('animate-fade-in');
+          } else {
+            floatingCTA.classList.add('hidden');
+          }
+        }
+        
+        window.addEventListener('scroll', handleScroll);
+        
+        dismissCTA.addEventListener('click', () => {
+          isDismissed = true;
+          floatingCTA.classList.add('hidden');
+        });
+        
+        // Call once to check initial scroll position
+        handleScroll();
+      });
+
+      // Mobile menu functionality
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const closeMobileMenu = document.getElementById('closeMobileMenu');
+      let isMobileMenuOpen = false;
+
+      function toggleMobileMenu(show) {
+        const menu = document.getElementById('mobileMenu');
+        const overlay = document.getElementById('mobileMenuOverlay');
+        const mainContent = document.querySelector('main');
+        const links = menu.querySelectorAll('.mobile-nav-link, .mobile-nav-button');
+        
+        if (show) {
+          // Show menu and overlay
+          menu.classList.remove('hidden');
+          overlay.classList.remove('hidden');
+          document.body.style.overflow = 'hidden';
+          
+          // Add strong blur to main content
+          mainContent.classList.add('content-blur');
+          
+          // Fade in overlay
+          requestAnimationFrame(() => {
+            overlay.classList.add('overlay-visible');
+          });
+          
+          // Add backdrop blur with increased intensity
+          menu.classList.add('backdrop-blur-in');
+          
+          // Animate in links with delay
+          links.forEach((link, index) => {
+            setTimeout(() => {
+              link.classList.add('animate-in');
+            }, 100 + (index * 100));
+          });
+          
+          // Slide in menu
+          setTimeout(() => {
+            menu.classList.add('translate-x-0');
+            menu.classList.remove('translate-x-full');
+          }, 10);
+        } else {
+          // Hide menu and overlay
+          menu.classList.add('translate-x-full');
+          menu.classList.remove('translate-x-0');
+          overlay.classList.remove('overlay-visible');
+          document.body.style.overflow = '';
+          
+          // Remove blur from main content
+          mainContent.classList.remove('content-blur');
+          
+          // Reset animations
+          links.forEach(link => {
+            link.classList.remove('animate-in');
+          });
+          
+          // Remove backdrop blur
+          menu.classList.remove('backdrop-blur-in');
+          
+          // Wait for animation to complete before hiding
+          setTimeout(() => {
+            menu.classList.add('hidden');
+            overlay.classList.add('hidden');
+          }, 500);
+        }
+      }
+
+      mobileMenuBtn.addEventListener('click', () => toggleMobileMenu(true));
+      closeMobileMenu.addEventListener('click', () => toggleMobileMenu(false));
+
+      // Close mobile menu on window resize
+      window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768 && isMobileMenuOpen) {
+          toggleMobileMenu(false);
+        }
+      });
+
+      // Close menu when clicking on a link
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => toggleMobileMenu(false));
+      });
+
+      // Add touch feedback
+      document.querySelectorAll('.mobile-nav-link, .mobile-nav-button').forEach(element => {
+        element.addEventListener('touchstart', () => {
+          element.style.transform = 'scale(0.98)';
+        });
+        
+        element.addEventListener('touchend', () => {
+          element.style.transform = 'scale(1)';
+        });
+      });
+    </script>
+  </body>
+</html>
