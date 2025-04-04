@@ -303,4 +303,86 @@ body {
           margin: 0;
           padding: 0 1rem;
         }
+
+        /* Persona cards container */
+        .grid-cols-1 {
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+
+        /* Individual persona cards */
+        .card-hover {
+          margin-bottom: 1rem;
+          padding: 1.5rem;
+          background: white;
+          border-radius: 1rem;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        /* Icon container */
+        .card-hover .flex.justify-center {
+          margin-bottom: 1rem;
+        }
+
+        /* Title styling */
+        .card-hover h3 {
+          font-size: 1.25rem;
+          margin-bottom: 0.75rem;
+          color: #1F2937;
+        }
+
+        /* Description text */
+        .card-hover p {
+          font-size: 0.9375rem;
+          line-height: 1.5;
+          margin-bottom: 1rem;
+        }
+
+        /* List items */
+        .card-hover ul {
+          margin-top: 1rem;
+        }
+
+        .card-hover li {
+          padding: 0.5rem 0;
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+        }
+
+        /* Add touch feedback */
+        .card-hover {
+          transition: transform 0.2s ease;
+        }
+
+        .card-hover:active {
+          transform: scale(0.98);
+        }
+
+        /* Add these styles for the mentors section */
+        .mentors-container {
+          display: flex;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          gap: 1rem;
+          padding: 1rem;
+          margin: 0 -1rem;
+          -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+          
+          /* Hide scrollbar but keep functionality */
+          scrollbar-width: none; /* Firefox */
+          -ms-overflow-style: none; /* IE and Edge */
+        }
+        
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .mentors-container::-webkit-scrollbar {
+          display: none;
+        }
+        
+        /* Mentor card styles */
+        .mentor-card {
+          scroll-snap-align: start;
+          min-width: 280px; /* Fixed width for cards */
+          flex: 0 0 auto;
+        }
       }
